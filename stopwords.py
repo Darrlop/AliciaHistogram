@@ -9,7 +9,6 @@ def load_stopwords(fichero_words: str)-> set[str]:
   stopw = read_file(fichero_words)
   stopw = stopw.split()
   set_stopwords = set(stopw)
-  print(set_stopwords)
   return set_stopwords
 
 

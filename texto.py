@@ -5,7 +5,7 @@ realizando la normalización del mismo y su tokenización en una lista. Hace uso
 from funciones101 import *
 from custom_types import *
 
-def leer_fichero_libro(titulo):
+def leer_fichero_libro(titulo: str)-> str:
     ''' lee el fichero del libro y lo retorna en una cadena '''
     try:
         cadena = read_file(titulo)  # 'alice_full_text.txt'
@@ -14,7 +14,7 @@ def leer_fichero_libro(titulo):
     return cadena
     
 
-def preparar_Texto(cadena):
+def preparar_Texto(cadena: str)-> list[str]:
     ''' 
     Recibe una cadena con el texto de la novela de Alicia y normaliza el texto, dejándolo tokenizado en una lista 
     '''
@@ -28,8 +28,7 @@ def preparar_Texto(cadena):
 if __name__ == "__main__":
   try:
     cadena = leer_fichero_libro('alice_full_text.txt')
-    tokenizados = preparar_Texto(cadena)
-    print(tokenizados)
+    texto_tokenizado = preparar_Texto(cadena)
   except FileNotFoundError as e:
      print(f"Error: Fichero no encontrado -> {e}")
    
